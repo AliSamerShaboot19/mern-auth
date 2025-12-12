@@ -1,0 +1,26 @@
+{
+  "name": "google-auth",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000m\u0000e\u0000r\u0000n\u0000-\u0000a\u0000u\u0000t\u0000h\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliSamerShaboot19/mern-auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AliSamerShaboot19/mern-auth/issues"
+  },
+  "homepage": "https://github.com/AliSamerShaboot19/mern-auth#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
