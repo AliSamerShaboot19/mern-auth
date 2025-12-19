@@ -2,7 +2,8 @@
 // res to client side to server
 import UserAuth from "../models/UserAuth.js";
 import bcryptjs from "bcryptjs";
-export const SignUp = async (req, res) => {
+import { ErrorHandler } from "../utils/error.js";
+export const SignUp = async (req, res, next) => {
   const { name, email, password } = req.body;
   const hashedPassword = bcryptjs.hashSync(password, 10);
   const newUser = new UserAuth({ name, email, password: hashedPassword });
@@ -13,6 +14,6 @@ export const SignUp = async (req, res) => {
       message: "User Created Successfully",
     });
   } catch (error) {
-    res.status(500).json(error.message);
+    next(ErrorHandler(500, error.message));
   }
 };
