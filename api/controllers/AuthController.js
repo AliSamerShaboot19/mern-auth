@@ -27,15 +27,15 @@ export const SignIn = async (req, res, next) => {
     if (!validUser) return next(ErrorHandler(404, "Invalid credentials"));
     const validPassword = bcryptjs.compareSync(password, validUser.password);
 
-    if (!validPassword) return next(ErrorHandler(401, "Invqalid Password"));
-    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SWCRET);
+    if (!validPassword) return next(ErrorHandler(401, "Invalid Password"));
+    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
 
     const { password: hashedPassword, ...others } = validUser._doc;
     const expireDate = new Date(Date.now() + 3600000);
     res
       .cookie("access_token", token, { httpOnly: true, expires: expireDate })
       .status(200)
-      .json(others);
+      .json({ success: true, data: others });
   } catch (error) {
     next(error);
   }
