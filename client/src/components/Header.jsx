@@ -1,15 +1,36 @@
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <div className="bg-slate-200">
-      <div className="flex justify-between items-center max-w-6xl">
-        <Link to="/">
-          <h1 className="font-bold">Auth App</h1>
+    <div className="bg-slate-200 p-4">
+      <div className="flex justify-between items-center max-w-6xl mx-auto">
+        <Link to="/" className="hover:opacity-80 transition-opacity">
+          <h1 className="font-bold text-2xl text-slate-800">Auth App</h1>
         </Link>
-        <ul className="flex gap-4">
-          <li>Home</li>
-          <li>About</li>
-          <li>Sign In</li>
+        <ul className="flex gap-6">
+          <li>
+            <Link
+              to="/"
+              className="text-slate-700 hover:text-slate-900 font-medium hover:underline transition-colors"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="text-slate-700 hover:text-slate-900 font-medium hover:underline transition-colors"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/sign-in"
+              className="bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-900 transition-colors font-medium"
+            >
+              Sign In
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
