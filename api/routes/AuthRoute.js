@@ -6,4 +6,5 @@ const AuthRoute = express.Router();
 AuthRoute.post("/signup", SignUp);
 AuthRoute.post("/signin", SignIn);
 AuthRoute.post("/google", google);
+
 export default AuthRoute;

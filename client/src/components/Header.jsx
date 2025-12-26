@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 const Header = () => {
-  const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser);
+  const currentUser = useSelector((state) => state.user?.currentUser?.data);
 
   return (
     <div className="bg-slate-200 p-4">
@@ -31,7 +31,7 @@ const Header = () => {
             {currentUser ? (
               <Link to="/profile">
                 <img
-                  src={currentUser.data.profilePicture}
+                  src={currentUser.profilePicture || "/default-avatar.png"}
                   alt="profile"
                   className="h-7 w-7 rounded-full object-cover"
                 />
